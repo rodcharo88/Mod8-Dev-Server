@@ -17,7 +17,7 @@ pipeline {
 //                        bat 'cd proyectoFinal-vue-modulo6'
 //                    } else {
                         sh 'git clone https://github.com/rodcharo88/proyectoFinal-vue-modulo6'
-                        sh 'cd proyectoFinal-vue-modulo6'
+//                        sh 'cd proyectoFinal-vue-modulo6'
 //                    }
                     sh 'echo {{FULLNAME}}'
                     sh 'cd proyectoFinal-vue-modulo6 && npm install'
