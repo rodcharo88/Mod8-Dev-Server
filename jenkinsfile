@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'Nodo1'
+            label 'server_dev_debian'
         }
     }
     environment {
