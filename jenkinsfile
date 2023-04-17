@@ -9,24 +9,6 @@ pipeline {
         SERVICE_NAME_BACK = "pythonback"
     }
     stages {
-        stage('Build') {
-            steps {
-                 script {
-                    def output = sh(returnStdout: true, script: 'dir /b /a "proyectoFinal-vue-modulo6"')
-                    if (output.contains('proyectoFinal-vue-modulo6')) {
-                        sh 'cd proyectoFinal-vue-modulo6'
-                    } else {
-                        sh 'git clone https://github.com/rodcharo88/proyectoFinal-vue-modulo6'
-                        sh 'cd proyectoFinal-vue-modulo6'
-                    }
-                    sh 'echo {{FULLNAME}}'
-                    sh 'cd proyectoFinal-vue-modulo6 && npm install'
-                    sh 'cd proyectoFinal-vue-modulo6 && docker-compose up -d'
-                    sh 'docker tag rodcharo/modulo6:latest 192.168.0.12:8082/mod8/vuejsfront:v2.5'
-                    sh 'docker push 192.168.0.12:8082/mod8/vuejsfront:v2.5'
-                }
-            }
-        }
 
         stage('DEVELOPMENT') {
             environment {
